@@ -1,4 +1,6 @@
 .PHONY: all
 
-all:
-	GOOS=windows GOARCH=amd64 go build -trimpath -ldflags="-w -s" -o superlink.exe
+all: export GOARCH=arm64
+	 export GOOS=windows
+all: 
+	go build -trimpath -ldflags="-w -s" -o superlink.exe
